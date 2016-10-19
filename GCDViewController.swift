@@ -10,6 +10,8 @@ import UIKit
 
 class GCDViewController: UIViewController {
 
+    
+    let url = URL(string: "http://img12.deviantart.net/3273/i/2015/112/e/7/game_of_thrones___winter_direwolf___loup_d_hiver_by_kanthesis-d61xr28.jpg")
     @IBOutlet weak var image: UIImageView!
     @IBAction func updateAlpha(_ sender: UISlider) {
         let value : CGFloat = CGFloat(sender.value)
@@ -20,6 +22,15 @@ class GCDViewController: UIViewController {
     }
     
     @IBAction func syncDownload(_ sender: AnyObject) {
+        
+        do{
+            let data = try Data(contentsOf: url!)
+            image.image = UIImage(data: data)
+        }catch{
+            print("Error descargando imagen")
+        }
+        
+        
     }
     
     @IBAction func actorDownload(_ sender: AnyObject) {
