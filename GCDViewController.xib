@@ -16,16 +16,29 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XV0-Jy-EKT">
-                    <frame key="frameInset" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XV0-Jy-EKT">
                     <items>
                         <barButtonItem title="Sync" id="6qY-gf-p7A"/>
-                        <barButtonItem title="Item" id="Ehl-qg-Mng"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="WSz-EA-5bg"/>
+                        <barButtonItem title="Async" id="Ehl-qg-Mng"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vCu-cA-jVn"/>
+                        <barButtonItem title="Actor" id="D9o-2G-aQz"/>
                     </items>
                 </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L1o-fV-fnl"/>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="L1o-fV-fnl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DFi-Hs-eJe"/>
+                <constraint firstItem="XV0-Jy-EKT" firstAttribute="top" secondItem="L1o-fV-fnl" secondAttribute="bottom" id="HQU-fe-gvA"/>
+                <constraint firstItem="XV0-Jy-EKT" firstAttribute="trailing" secondItem="L1o-fV-fnl" secondAttribute="trailing" id="QS7-RJ-P4F"/>
+                <constraint firstAttribute="trailing" secondItem="L1o-fV-fnl" secondAttribute="trailing" id="aLs-YH-DAd"/>
+                <constraint firstItem="XV0-Jy-EKT" firstAttribute="top" secondItem="L1o-fV-fnl" secondAttribute="bottom" id="ePQ-K6-dwB"/>
+                <constraint firstItem="L1o-fV-fnl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hf6-kE-9IP"/>
+                <constraint firstItem="XV0-Jy-EKT" firstAttribute="leading" secondItem="L1o-fV-fnl" secondAttribute="leading" id="iCp-bT-vYB"/>
+                <constraint firstAttribute="bottom" secondItem="XV0-Jy-EKT" secondAttribute="bottom" id="ri4-B1-LQK"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
 </document>
