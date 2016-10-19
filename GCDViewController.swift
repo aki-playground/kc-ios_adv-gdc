@@ -19,6 +19,21 @@ class GCDViewController: UIViewController {
     }
     
     @IBAction func asyncDownload(_ sender: AnyObject) {
+            //Metemos la operación de "descarga" a una cola
+            DispatchQueue.global(qos: .userInitiated) // la cola de tipo .userInitiated tendrá más prioridad que .default
+                .async {
+                    do{
+                        let data = try Data(contentsOf: self.url!)
+                        
+                        DispatchQueue.main.async { // Toda interacción en la vista se debe hacer en el hilo proncipal (DispqtchQueue.main)
+                            self.image.image = UIImage(data: data)
+                        }
+                        
+                    }catch{
+                        print("Error descargando imagen")
+                    }
+            }
+        
     }
     
     @IBAction func syncDownload(_ sender: AnyObject) {
