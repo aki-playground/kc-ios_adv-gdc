@@ -39,9 +39,9 @@
                     </items>
                 </toolbar>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L1o-fV-fnl"/>
-                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="J9l-Qq-nc1">
-                    <frame key="frameInset" minX="14" minY="533" width="347" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="J9l-Qq-nc1">
+                    <frame key="frameInset" minX="14" height="31" maxX="14" maxY="103"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <connections>
                         <action selector="updateAlpha:" destination="-1" eventType="valueChanged" id="Caw-7e-c8E"/>
                     </connections>

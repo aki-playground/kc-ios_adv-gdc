@@ -12,7 +12,8 @@ class GCDViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
     @IBAction func updateAlpha(_ sender: UISlider) {
-        
+        let value : CGFloat = CGFloat(sender.value)
+        image.alpha = value
     }
     
     @IBAction func asyncDownload(_ sender: AnyObject) {
