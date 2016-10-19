@@ -49,6 +49,31 @@ class GCDViewController: UIViewController {
     }
     
     @IBAction func actorDownload(_ sender: AnyObject) {
+        
+        // Llamamos a nuestra func withImageFromURL y le pasamos el bolque de finalización
+        withImage(fromURL: self.url!) { (img: UIImage) in
+            self.image.image = img
+        }
+    }
+    
+    
+    typealias completionClosure = (UIImage) -> ()
+    
+    func withImage(fromURL url: URL, completion: @escaping completionClosure) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            do {
+                let data = try Data(contentsOf: url)
+                let img = UIImage(data:data)
+                
+                // La clausura de finalización en la cola principal por defecto
+                DispatchQueue.main.async {
+                    completion(img!)
+                }
+            } catch {
+                print("Error en descarga de imagen")
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
